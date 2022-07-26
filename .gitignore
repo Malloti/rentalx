@@ -3,4 +3,4 @@
 /.editorconfig
 /.eslintignore
 /.eslintrc.json
-/.prettier.config.js
+/prettier.config.js
