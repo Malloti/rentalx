@@ -5,11 +5,11 @@ services:
     container_name: rentalx_db
     restart: always
     ports:
-      - 5432:5432
+      - 5435:5432
     environment:
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=admin
-      - POSTGRES_DB=rentalx
+      POSTGRES_DB: rentalx
+      POSTGRES_USER: docker
+      POSTGRES_PASSWORD: admin
     volumes:
       - pgdata:/data/postgres
   app:
