@@ -50,6 +50,14 @@ class CarsRepository implements ICarsRepository {
 
     return carsQuery.getMany();
   }
+
+  async findById(id: string): Promise<Car> {
+    return this.repository.findOne({
+      where: {
+        id,
+      },
+    });
+  }
 }
 
 export { CarsRepository };

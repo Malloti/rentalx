@@ -4,17 +4,17 @@ import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/Us
 import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
 import { CarsRepository } from '@modules/cars/infra/typeorm/repositories/CarsRepository';
 import { CategoriesRepository } from '@modules/cars/infra/typeorm/repositories/CategoriesRepository';
-import { SpecificationsRepository } from '@modules/cars/infra/typeorm/repositories/SpacificationsRepository';
+import { SpecificationsRepository } from '@modules/cars/infra/typeorm/repositories/SpecificationsRepository';
 import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
 import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRepository';
-import { ISpecificationRepository } from '@modules/cars/repositories/ISpacificationsRepository';
+import { ISpecificationsRepository } from '@modules/cars/repositories/ISpecificationsRepository';
 
 container.registerSingleton<ICategoriesRepository>(
   'CategoriesRepository',
   CategoriesRepository,
 );
 
-container.registerSingleton<ISpecificationRepository>(
+container.registerSingleton<ISpecificationsRepository>(
   'SpecificationsRepository',
   SpecificationsRepository,
 );
