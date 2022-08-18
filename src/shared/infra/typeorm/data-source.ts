@@ -16,7 +16,14 @@ const AppDataSource = new DataSource({
 });
 
 export function createConnection(host = 'database'): Promise<DataSource> {
-  return AppDataSource.setOptions({ host, port: 5432 }).initialize();
+  const defaultDatabase = AppDataSource.options.database as string;
+
+  return AppDataSource.setOptions({
+    host: process.env.NODE_ENV === 'test' ? 'localhost' : host,
+    port: process.env.NODE_ENV === 'test' ? 5435 : 5432,
+    database:
+      process.env.NODE_ENV === 'test' ? 'rentalx_test' : defaultDatabase,
+  }).initialize();
 }
 
 export default AppDataSource;
